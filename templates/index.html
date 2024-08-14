@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Messenger</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'profile' %}">My Profile</a></li>
+                <li><a href="{% url 'users' %}">Users</a></li>
+                <li><a href="{% url 'chatgroups' %}">Chat Groups</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>{{ chat_group.name|default:"Welcome to Messenger" }}</h1>
+        <p>Select an option from the menu to begin.</p>
+
+        <div id="log">
+            <!-- Здесь будут отображаться сообщения -->
+        </div>
+
+        <form id="form">
+            <input type="text" id="msg" size="64" autofocus placeholder="Enter your message" />
+            <input type="submit" value="Send" />
+            <input type="button" value="Send geo" id="send_geo" />
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Messenger</p>
+    </footer>
+
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

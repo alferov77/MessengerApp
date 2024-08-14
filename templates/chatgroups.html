@@ -1,0 +1,15 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Chat Groups{% endblock %}
+
+{% block content %}
+    <h1>Chat Groups</h1>
+    <ul>
+        {% for chatgroup in chatgroups %}
+            <li><a href="{% url 'chatgroup-detail' chatgroup.id %}">{{ chatgroup.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
